@@ -8,18 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.dsdeliverdsdeliver.dto.ProductDTO;
-import com.devsuperior.dsdeliverdsdeliver.servicies.ProductService;
+import com.devsuperior.dsdeliverdsdeliver.dto.OrderDTO;
+import com.devsuperior.dsdeliverdsdeliver.servicies.OrderService;
 
 @RestController
-@RequestMapping(value = "/products")
-public class ProductController {
+@RequestMapping(value = "/orders")
+public class OrderController {
+	
 	@Autowired
-	private ProductService service;
+	private OrderService service;
 	
 	@GetMapping
-	public ResponseEntity<List<ProductDTO>> findAll() {
-		List<ProductDTO> list = service.findAll();
+	public ResponseEntity<List<OrderDTO>> findAll() {
+		List<OrderDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }

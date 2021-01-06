@@ -18,6 +18,11 @@ import javax.persistence.Table;
 @Table(name = "tb_order")
 public class Order implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -34,12 +39,11 @@ public class Order implements Serializable{
 	private Set<Product> products = new HashSet<>();
 
 	public Order() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
-	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status,
-			Set<Product> products) {
+	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status
+			) {
 		
 		this.id = id;
 		this.address = address;
